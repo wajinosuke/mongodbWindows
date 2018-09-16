@@ -1,0 +1,30 @@
+{
+  "name": "mongoose-windows",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "exec": "node dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wajinosuke/mongoose-windows.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wajinosuke/mongoose-windows/issues"
+  },
+  "homepage": "https://github.com/wajinosuke/mongoose-windows#readme",
+  "dependencies": {
+    "mongoose": "^5.2.15"
+  },
+  "devDependencies": {
+    "ts-loader": "^5.1.1",
+    "typescript": "^3.0.3",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  }
+}
