@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 
-mongoose.connect('mongodb://localhost/tutrial');
+mongoose.connect('mongodb://localhost/tutrial', { useNewUrlParser: true });
 
 // スキーマを定義
 const testSchema = new mongoose.Schema({
@@ -26,9 +26,11 @@ const testDoc = new Test({
 
 const main = async () => {
     try {
-    const doc = await testDoc.save();
+        const doc = await testDoc.save();
         console.log(doc);
     } catch (e) {
         console.log(e);
     }
 }
+
+main();
