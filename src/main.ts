@@ -8,16 +8,27 @@ const testSchema = new mongoose.Schema({
     Suji: Number
 })
 
+// インターフェースを定義
+interface ITestInterface extends mongoose.Document {
+    Moji: string;
+    Suji: number;
+}
+
 // モデルを定義
-const Test = mongoose.model('Test', testSchema);
+const Test = mongoose.model<ITestInterface>('Test', testSchema);
 
 // ドキュメント作成
 
 const testDoc = new Test({
     Moji: 'moji',
-    Suji: 'moji'
+    Suji: 3
 })
 
-testDoc.save().then((doc) => {
-    console.log(doc);
-});
+const main = async () => {
+    try {
+    const doc = await testDoc.save();
+        console.log(doc);
+    } catch (e) {
+        console.log(e);
+    }
+}

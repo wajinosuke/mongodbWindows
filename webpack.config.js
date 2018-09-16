@@ -1,8 +1,11 @@
 var path = require('path');
+var nodeExternals = require('webpack-node-externals');
 module.exports = {
     mode: 'development',
     target: 'node',
     devtool: 'source-map',
+    // node_modules配下のパッケージをWebpackに含まないように設定
+    externals: [nodeExternals()],
     entry: [path.join(__dirname, '/src/main.ts')],
     output: {
         path: `${__dirname}/dist`,
@@ -12,14 +15,12 @@ module.exports = {
         rules: [{
             // TypeScriptをコンパイル
             test: /\.ts$/,
-            exclude: /node_modules/,
             use: {
                 loader: 'ts-loader'
             }
         }, {
             // javascriptをコンパイル
             test: /\.js$/,
-            exclude: /node_modules/,
             use: {
                 loader: 'babel-loader'
             }
